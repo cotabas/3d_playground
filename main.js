@@ -2,6 +2,8 @@ import './style.css'
 
 import * as THREE from 'three';
 
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -22,13 +24,16 @@ const octa = new THREE.Mesh( geometry, material );
 
 scene.add( octa );
 
+const controls = new OrbitControls( camera, renderer.domElement );
+
 function animate() {
   requestAnimationFrame( animate );
-
+/* 
   octa.rotateX( 0.001 );
   octa.rotateY( 0.01 );
   octa.rotateZ( 0.01 );
-
+*/
+  controls.update();
 
 
   renderer.render( scene, camera );
