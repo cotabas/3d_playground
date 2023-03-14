@@ -40,3 +40,9 @@ function animate() {
 }
 
 animate();
+
+function spinOcta() {
+  octa.rotateY( 0.01 );
+
+}
+document.body.onscroll = spinOcta;
